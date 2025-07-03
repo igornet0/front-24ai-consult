@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Projects.module.css';
 import { motion } from 'framer-motion';
 import { FaBoxes, FaPhoneVolume, FaShieldAlt } from 'react-icons/fa';
 
@@ -21,30 +20,32 @@ const projects = [
   },
 ];
 
-function Projects() {
+const Projects = () => {
   return (
-    <section className={styles.projects}>
-      <h2>Примеры реализованных проектов:</h2>
-      <div className={styles.grid}>
+    <section className="py-16 px-4 bg-gradient-to-b from-black via-[#0f0f1f] to-black text-white">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-orange-400 via-pink-500 to-blue-500 text-transparent bg-clip-text">
+        Примеры реализованных проектов:
+      </h2>
+
+      <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
         {projects.map((proj, index) => (
           <motion.div
             key={index}
-            className={styles.card}
-            whileHover={{
-              scale: 1.05,
-              y: -5,
-              boxShadow: '0px 10px 20px rgba(255, 200, 160, 0.2)',
-            }}
+            whileHover={{ scale: 1.05, y: -5 }}
             transition={{ type: 'spring', stiffness: 300 }}
+            className="relative group w-[280px] bg-[#111827]/70 p-6 rounded-xl text-center backdrop-blur-md border border-transparent hover:border-pink-500 transition"
           >
-            <div className={styles.icon}>{proj.icon}</div>
-            <h3>{proj.title}</h3>
-            <p>{proj.description}</p>
+            {/* Градиентная неоновая рамка */}
+            <div className="absolute inset-0 z-[-1] rounded-xl before:content-[''] before:absolute before:inset-[-2px] before:rounded-xl before:bg-gradient-to-r before:from-pink-500 before:via-purple-500 before:to-blue-500 before:opacity-30 before:blur-md" />
+
+            <div className="text-pink-400 mb-4">{proj.icon}</div>
+            <h3 className="text-xl font-semibold mb-2">{proj.title}</h3>
+            <p className="text-gray-300 text-sm">{proj.description}</p>
           </motion.div>
         ))}
       </div>
     </section>
   );
-}
+};
 
 export default Projects;

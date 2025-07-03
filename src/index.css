@@ -1,4 +1,12 @@
 
-html {
+/* html {
   background-color: #0b0d13;
+} */
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black text-white font-sans;
 }

@@ -1,3 +1,4 @@
+@import "tailwindcss";
 
 .hero {
   text-align: center;
@@ -5,20 +6,34 @@
 }
 
 .logo {
-  width: 80px;
+  width: 120px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @apply bg-black text-white font-sans;
 }
 
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 10, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+.featureIcon {
+  @apply p-4 rounded-full bg-black;
+  position: relative;
+  z-index: 0;
+}
+
+.featureIcon::before {
+  content: '';
+
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -1px;
+  z-index: -1;
+  border-radius: 999999px;
+  background: linear-gradient(135deg, #ff3cac, #784ba0, #2b86c5);
+  box-shadow: 0 0 10px #ff3cac, 0 0 20px #784ba0, 0 0 30px #2b86c5;
 }
 
 .modal {
@@ -29,42 +44,6 @@
   max-width: 450px;
   position: relative;
   color: #fff;
-}
-
-.closeBtn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 26px;
-  color: #f9c5a2;
-  cursor: pointer;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.form label {
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-}
-
-.form input,
-.form select {
-  margin-top: 5px;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-}
-
-.logoContainer h2 {
-  color: #e78c6d;
 }
 
 .hero h1 {
