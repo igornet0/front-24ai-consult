@@ -19,19 +19,14 @@ const HeroSection = () => {
       <motion.img
         src={logo}
         alt="24ai SPB Consult"
-        className="w-[120px] h-[100px] mx-auto rounded-full bg-black object-contain"
+        className="w-24 h-24 mx-auto object-contain"
         animate={{
-          scale: [1, 1.05, 1],
-          boxShadow: [
-            '0 0 0px #ff3cac',
-            '0 0 12px #784ba0',
-            '0 0 0px #2b86c5',
-          ],
+          scale: [1, 1.1, 1],
+          opacity: [1, 0.85, 1],
         }}
         transition={{
-          duration: 3,
+          duration: 2,
           repeat: Infinity,
-          repeatType: 'loop',
           ease: 'easeInOut',
         }}
       />
