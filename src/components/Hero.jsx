@@ -9,14 +9,43 @@ const HeroSection = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gradient-to-b from-black via-[#0a0a1a] to-black">
-      <motion.div className={styles.logoContainer}
-        initial={{ opacity: 0, y: 20 }}
+      <motion.div
+      initial={{ opacity: 0, scale: 0.9, y: 40 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      viewport={{ once: true }}
+      className="text-center"
+    >
+      <motion.img
+        src={logo}
+        alt="24ai SPB Consult"
+        className="w-[120px] h-[100px] mx-auto rounded-full bg-black object-contain"
+        animate={{
+          scale: [1, 1.05, 1],
+          boxShadow: [
+            '0 0 0px #ff3cac',
+            '0 0 12px #784ba0',
+            '0 0 0px #2b86c5',
+          ],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          repeatType: 'loop',
+          ease: 'easeInOut',
+        }}
+      />
+
+      <motion.h2
+        initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.12 }}
-        viewport={{ once: true }}>
-        <img src={logo} alt="24ai SPB Consult" className={styles.logo} />
-        <h2 className="text-lg text-pink-400 font-medium">24Ai SPB CONSULT</h2>
-      </motion.div>
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="text-lg text-pink-400 font-medium mt-4"
+      >
+        24Ai SPB CONSULT
+      </motion.h2>
+    </motion.div>
 
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 via-pink-500 to-blue-500 text-transparent bg-clip-text mt-4 leading-tight">
         Автоматизируйте<br />бизнес.<br />Мгновенно.
