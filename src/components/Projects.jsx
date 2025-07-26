@@ -38,7 +38,7 @@ const Projects = () => {
             {/* Градиентная неоновая рамка */}
             <div className="absolute inset-0 z-[-1] rounded-xl before:content-[''] before:absolute before:inset-[-2px] before:rounded-xl before:bg-gradient-to-r before:from-pink-500 before:via-purple-500 before:to-blue-500 before:opacity-30 before:blur-md" />
 
-            <div className="text-pink-400 mb-4">{proj.icon}</div>
+            <div className="flex justify-center text-pink-400 mb-4">{proj.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{proj.title}</h3>
             <p className="text-gray-300 text-sm">{proj.description}</p>
           </motion.div>
